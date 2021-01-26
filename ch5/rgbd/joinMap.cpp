@@ -17,14 +17,14 @@ int main(int argc, char **argv) {
     vector<cv::Mat> colorImgs, depthImgs;    // 彩色图和深度图
     TrajectoryType poses;         // 相机位姿
 
-    ifstream fin("./pose.txt");
+    ifstream fin("/home/yuancheng/桌面/slambook2 learn/ch5/rgbd/pose.txt");
     if (!fin) {
         cerr << "请在有pose.txt的目录下运行此程序" << endl;
         return 1;
     }
 
     for (int i = 0; i < 5; i++) {
-        boost::format fmt("./%s/%d.%s"); //图像文件格式
+        boost::format fmt("/home/yuancheng/桌面/slambook2 learn/ch5/rgbd/%s/%d.%s"); //图像文件格式
         colorImgs.push_back(cv::imread((fmt % "color" % (i + 1) % "png").str()));
         depthImgs.push_back(cv::imread((fmt % "depth" % (i + 1) % "pgm").str(), -1)); // 使用-1读取原始图像
 

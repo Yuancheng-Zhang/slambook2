@@ -3,12 +3,14 @@
 #include <unistd.h>
 #include <pangolin/pangolin.h>
 #include <sophus/se3.hpp>
+//#include <sophus/se3.h>
 
 using namespace Sophus;
 using namespace std;
 
-string groundtruth_file = "./example/groundtruth.txt";
-string estimated_file = "./example/estimated.txt";
+string groundtruth_file = "/home/yuancheng/桌面/slambook2 learn/ch4/example/groundtruth.txt";
+string estimated_file = "/home/yuancheng/桌面/slambook2 learn/ch4/example/estimated.txt";
+
 
 typedef vector<Sophus::SE3d, Eigen::aligned_allocator<Sophus::SE3d>> TrajectoryType;
 
