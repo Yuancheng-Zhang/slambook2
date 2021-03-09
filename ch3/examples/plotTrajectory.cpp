@@ -8,7 +8,7 @@ using namespace std;
 using namespace Eigen;
 
 // path to trajectory file
-string trajectory_file = "./examples/trajectory.txt";
+string trajectory_file = "/home/yuancheng/桌面/slambook2-mine/ch3/examples/trajectory.txt";
 
 void DrawTrajectory(vector<Isometry3d, Eigen::aligned_allocator<Isometry3d>>);
 
@@ -26,6 +26,7 @@ int main(int argc, char **argv) {
     fin >> time >> tx >> ty >> tz >> qx >> qy >> qz >> qw;
     Isometry3d Twr(Quaterniond(qw, qx, qy, qz));
     Twr.pretranslate(Vector3d(tx, ty, tz));
+    out<<"Twr: "<<Twr<<endl;
     poses.push_back(Twr);
   }
   cout << "read total " << poses.size() << " pose entries" << endl;

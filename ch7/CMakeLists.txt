@@ -17,6 +17,7 @@ include_directories(
         "/usr/include/eigen3/"
 )
 
+
 add_executable(orb_cv orb_cv.cpp)
 target_link_libraries(orb_cv ${OpenCV_LIBS})
 
@@ -38,5 +39,7 @@ target_link_libraries(pose_estimation_3d2d
 
 add_executable(pose_estimation_3d3d pose_estimation_3d3d.cpp)
 target_link_libraries(pose_estimation_3d3d
+        Sophus::Sophus
         g2o_core g2o_stuff
         ${OpenCV_LIBS})
+
